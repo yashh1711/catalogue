@@ -19,14 +19,14 @@ class MyApp extends StatelessWidget {
           false, //This property is used to hide the debug banner on right side of device
       themeMode: ThemeMode.light, //Light for light theme, dark for dark theme
       theme: ThemeData(
-        //useMaterial3: true,                   //For modern UI design
+        //useMaterial3: true, //For modern UI design
         primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.poppins().fontFamily,
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark, //For dark theme
       ),
-      initialRoute: "/login",
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.homeRoute: (context) => const HomePage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),
