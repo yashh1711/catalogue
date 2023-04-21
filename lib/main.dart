@@ -1,8 +1,8 @@
 import 'package:catalogue_30_days/pages/home_page.dart';
 import 'package:catalogue_30_days/pages/login_page.dart';
 import 'package:catalogue_30_days/utils/routes.dart';
+import 'package:catalogue_30_days/widgets/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,14 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner:
           false, //This property is used to hide the debug banner on right side of device
       themeMode: ThemeMode.light, //Light for light theme, dark for dark theme
-      theme: ThemeData(
-        //useMaterial3: true, //For modern UI design
-        primarySwatch: Colors.deepPurple,
-        fontFamily: GoogleFonts.poppins().fontFamily,
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark, //For dark theme
-      ),
+      theme: MyTheme.lightTheme,
+      darkTheme: MyTheme.darkTheme,
       initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.homeRoute: (context) => const HomePage(),

@@ -6,10 +6,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int days = 9;
+    int days = 10;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Catalogue'),
+        title: const Text('CATALOGUE'),
       ),
       body: Center(
         child: Text('DAY $days of Flutter App Dev'),
