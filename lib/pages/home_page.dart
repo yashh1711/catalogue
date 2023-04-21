@@ -1,11 +1,29 @@
+import 'dart:convert';
+
 import 'package:catalogue_30_days/models/catalog.dart';
 import 'package:catalogue_30_days/widgets/drawer.dart';
 import 'package:catalogue_30_days/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+
+  void initState() {
+    loadData();
+  }
+
+  loadData() async {
+    var catalogJson = await rootBundle.loadString('assets/files/catalog.json');
+    var decodedData = jsonDecode(catalogJson);
+    final productData = decodedData["products"];
+  }
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     //int days = 12;
