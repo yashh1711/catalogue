@@ -13,10 +13,10 @@ class MyTheme {
         color: Colors.black,
       ),
       titleTextStyle: TextStyle(
-        color: Colors.black,
-        fontSize: 20,
-        letterSpacing: 1.5,
-      ),
+          color: Colors.black,
+          fontSize: 20,
+          letterSpacing: 1.5,
+          fontWeight: FontWeight.w500),
     ),
   );
 

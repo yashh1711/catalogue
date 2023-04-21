@@ -1,3 +1,4 @@
+import 'package:catalogue_30_days/pages/device_page.dart';
 import 'package:catalogue_30_days/pages/home_page.dart';
 import 'package:catalogue_30_days/pages/login_page.dart';
 import 'package:catalogue_30_days/utils/routes.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         MyRoutes.homeRoute: (context) => const HomePage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),
+        MyRoutes.deviceRoute: (context) => const MyDevices()
       },
     );
   }
