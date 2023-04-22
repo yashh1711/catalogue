@@ -11,8 +11,12 @@ class HomePage extends StatefulWidget {
 
   @override
   State<HomePage> createState() => _HomePageState();
+}
 
+class _HomePageState extends State<HomePage> {
+  @override
   void initState() {
+    super.initState();
     loadData();
   }
 
@@ -20,14 +24,14 @@ class HomePage extends StatefulWidget {
     var catalogJson = await rootBundle.loadString('assets/files/catalog.json');
     var decodedData = jsonDecode(catalogJson);
     final productData = decodedData["products"];
+    CatalogModel.items =
+        List.from(productData).map<Item>((item) => Item.fromMap(item)).toList();
+    setState(() {});
   }
-}
 
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    //int days = 12;
-    final dummyList = List.generate(10, (index) => CatalogModel.items[0]);
+    //int days = 15;
     return Scaffold(
       appBar: AppBar(
         title: const Text('CATALOGUE'),
@@ -37,10 +41,10 @@ class _HomePageState extends State<HomePage> {
         child: ListView.builder(
           itemBuilder: (context, index) {
             return ItemWidget(
-              item: dummyList[index],
+              item: CatalogModel.items[index],
             );
           },
-          itemCount: dummyList.length,
+          itemCount: CatalogModel.items.length,
         ),
       ),
       drawer: const MyDrawer(),
