@@ -1,5 +1,4 @@
 import 'package:catalogue_30_days/utils/routes.dart';
-import 'package:catalogue_30_days/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -99,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                           width: changeButton ? 40 : 120,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: MyTheme.lightBluishColor,
+                            color: context.theme.buttonColor,
                             borderRadius:
                                 BorderRadius.circular(changeButton ? 40 : 10),
                           ),
