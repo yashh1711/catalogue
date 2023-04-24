@@ -1,4 +1,4 @@
-import 'package:catalogue_30_days/pages/device_page.dart';
+import 'package:catalogue_30_days/pages/cart_page.dart';
 import 'package:catalogue_30_days/pages/home_page.dart';
 import 'package:catalogue_30_days/pages/login_page.dart';
 import 'package:catalogue_30_days/utils/routes.dart';
@@ -18,14 +18,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner:
           false, //This property is used to hide the debug banner on right side of device
-      themeMode: ThemeMode.light, //Light for light theme, dark for dark theme
+      themeMode: ThemeMode.system, //Light for light theme, dark for dark theme
       theme: MyTheme.lightTheme,
       darkTheme: MyTheme.darkTheme,
       initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.homeRoute: (context) => const HomePage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),
-        MyRoutes.deviceRoute: (context) => const MyDevices()
+        MyRoutes.cartRoute: (context) => const CartPage()
       },
     );
   }
