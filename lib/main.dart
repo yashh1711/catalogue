@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         MyRoutes.homeRoute: (context) => const HomePage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),
-        MyRoutes.cartRoute: (context) => const CartPage()
+        MyRoutes.cartRoute: (context) => CartPage()
       },
     );
   }

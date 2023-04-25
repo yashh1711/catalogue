@@ -25,7 +25,7 @@ class DevicePage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const CartPage(),
+                          builder: (context) => CartPage(),
                         ),
                       );
                     },
@@ -58,6 +58,11 @@ class DevicePage extends StatelessWidget {
                   children: [
                     item.name.text.lg.xl3.bold.make(),
                     item.desc.text.textStyle(context.captionStyle).make(),
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet risus ac lacus tempor fermentum. Suspendisse aliquam odio accumsan erat sodales, in hendrerit dolor imperdiet. Phasellus vitae tellus quam. "
+                        .text
+                        .make()
+                        .p8()
+                        .expand()
                   ],
                 ).py64(),
               ),

@@ -7,13 +7,14 @@ import 'package:velocity_x/velocity_x.dart';
 class MyTheme {
   static ThemeData lightTheme = ThemeData(
     //useMaterial3: true, //For modern UI design
-    primarySwatch: Colors.deepPurple,
+    brightness: Brightness.light,
+    accentColor: Colors.deepPurple,
     fontFamily: GoogleFonts.poppins().fontFamily,
     cardColor: Colors.white,
     canvasColor: creamColor,
     iconTheme: const IconThemeData(color: Colors.white),
-    //buttonColor: darkBluishColor,
-    buttonTheme: ButtonThemeData(buttonColor: darkBluishColor),
+    buttonColor: darkBluishColor,
+    // buttonTheme: ButtonThemeData(buttonColor: darkBluishColor),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
       elevation: 0,
@@ -31,13 +32,13 @@ class MyTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     fontFamily: GoogleFonts.poppins().fontFamily,
-
+    accentColor: lightBluishColor,
     cardColor: Colors.black,
     canvasColor: darkcreamColor,
     iconTheme: const IconThemeData(color: Colors.white),
-    // ignore: deprecated_member_use
-    // buttonColor: lightBluishColor,
-    buttonTheme: ButtonThemeData(buttonColor: lightBluishColor),
+
+    buttonColor: lightBluishColor,
+    // buttonTheme: ButtonThemeData(buttonColor: lightBluishColor),
 
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.black,
@@ -46,10 +47,7 @@ class MyTheme {
         color: Colors.white,
       ),
       titleTextStyle: TextStyle(
-          color: Colors.black,
-          fontSize: 20,
-          letterSpacing: 1.5,
-          fontWeight: FontWeight.w500),
+          fontSize: 20, letterSpacing: 1.5, fontWeight: FontWeight.w500),
     ),
     //For dark theme
   );
