@@ -1,3 +1,4 @@
+import 'package:catalogue_30_days/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,12 +11,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Material(
-        child: Center(
-          child: Text('30 daysss'),
-        ),
-      ),
+    return MaterialApp(
+      home: const HomePage(),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          //useMaterial3: true,
+          ),
     );
   }
 }
