@@ -1,5 +1,5 @@
 import 'package:catalogue_30_days/models/catalog.dart';
-import 'package:catalogue_30_days/pages/cart_page.dart';
+import 'package:catalogue_30_days/widgets/home_widgets/add_to_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -20,22 +20,9 @@ class DevicePage extends StatelessWidget {
           alignment: MainAxisAlignment.spaceBetween,
           children: [
             "\$${item.price}".text.bold.xl2.make(),
-            ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CartPage(),
-                        ),
-                      );
-                    },
-                    style: ButtonStyle(
-                        elevation: const MaterialStatePropertyAll(2),
-                        shape: const MaterialStatePropertyAll(StadiumBorder()),
-                        backgroundColor: MaterialStatePropertyAll(
-                            context.theme.buttonColor)),
-                    child: "Add to cart".text.sm.make())
-                .wh(120, 50)
+            AddToCart(
+              item: item,
+            ).wh(120, 50)
           ],
         ).p32(),
       ),

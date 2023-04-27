@@ -1,3 +1,4 @@
+import 'package:catalogue_30_days/core/store.dart';
 import 'package:catalogue_30_days/models/cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -9,7 +10,7 @@ class CartPage extends StatelessWidget {
   });
 
   // @override
-  final _cart = CartModel();
+  final CartModel? _cart = (VxState.store as MyStore).cart;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,14 +21,19 @@ class CartPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          const _CartList().px32().pOnly(top: 8, bottom: 32).expand(),
+          _CartList().px32().pOnly(top: 8, bottom: 32).expand(),
           const Divider(),
           SizedBox(
             height: 200,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                "\$${_cart.totalPrice}".text.xl4.make().expand(),
+                VxConsumer(
+                  builder: (context, store, status) {
+                    return "\$${_cart?.totalPrice}".text.xl4.make().expand();
+                  },
+                  mutations: const {RemoveMutation},
+                ),
                 ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
@@ -59,23 +65,26 @@ class CartPage extends StatelessWidget {
 }
 
 class _CartList extends StatefulWidget {
-  const _CartList();
-
   @override
-  State<_CartList> createState() => __CartListState();
+  State<_CartList> createState() => _CartListState();
 }
 
-class __CartListState extends State<_CartList> {
-  final _cart = CartModel();
+class _CartListState extends State<_CartList> {
+  // const _CartList();
   @override
   Widget build(BuildContext context) {
+    final CartModel? cart = (VxState.store as MyStore).cart;
+    VxState.watch(context, on: [RemoveMutation]);
     return ListView.builder(
-      itemCount: _cart.items.length,
+      itemCount: cart?.items.length,
       itemBuilder: (context, index) => ListTile(
         leading: const Icon(Icons.done),
         trailing: IconButton(
-            onPressed: () {}, icon: const Icon(Icons.remove_circle_outlined)),
-        title: _cart.items[index].name.text.make(),
+            onPressed: () {
+              RemoveMutation(cart!.items[index]);
+            },
+            icon: const Icon(Icons.remove_circle_outlined)),
+        title: cart?.items[index].name.text.make(),
       ),
     );
   }
