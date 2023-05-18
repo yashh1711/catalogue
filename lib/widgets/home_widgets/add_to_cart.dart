@@ -37,7 +37,7 @@ class _AddToCartState extends State<AddToCart> {
       style: ButtonStyle(
           elevation: const MaterialStatePropertyAll(2),
           shape: const MaterialStatePropertyAll(StadiumBorder()),
-          backgroundColor: MaterialStatePropertyAll(context.theme.buttonColor)),
+          backgroundColor: MaterialStatePropertyAll(context.theme.canvasColor)),
       child: isInCart
           ? const Icon(Icons.done)
           : const Icon(

@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
             alignment: const AlignmentDirectional(35, -4),
             child: FloatingActionButton(
               onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-              backgroundColor: Theme.of(context).buttonColor,
+              backgroundColor: Theme.of(context).canvasColor,
               child: const Icon(
                 Icons.shopping_cart,
                 color: Colors.white,

@@ -37,7 +37,7 @@ class CartPage extends StatelessWidget {
                 ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                            context.theme.buttonColor),
+                            context.theme.canvasColor),
                         elevation: const MaterialStatePropertyAll(2),
                         shape: MaterialStateProperty.resolveWith(
                           (states) => const StadiumBorder(),
@@ -49,7 +49,7 @@ class CartPage extends StatelessWidget {
                         SnackBar(
                           content: "Buying not supported yet".text.make(),
                           padding: const EdgeInsets.all(20),
-                          backgroundColor: context.theme.buttonColor,
+                          backgroundColor: context.theme.canvasColor,
                           behavior: SnackBarBehavior.floating,
                         ),
                       );

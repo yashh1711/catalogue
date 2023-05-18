@@ -98,7 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                           width: changeButton ? 40 : 120,
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: context.theme.buttonColor,
+                            color: context.theme.canvasColor,
                             borderRadius:
                                 BorderRadius.circular(changeButton ? 40 : 10),
                           ),

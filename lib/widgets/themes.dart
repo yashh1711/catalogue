@@ -8,12 +8,12 @@ class MyTheme {
   static ThemeData lightTheme = ThemeData(
     //useMaterial3: true, //For modern UI design
     brightness: Brightness.light,
-    accentColor: Colors.deepPurple,
+    // accentColor: Colors.deepPurple,
     fontFamily: GoogleFonts.poppins().fontFamily,
     cardColor: Colors.white,
     canvasColor: creamColor,
     iconTheme: const IconThemeData(color: Colors.white),
-    buttonColor: darkBluishColor,
+    // buttonColor: darkBluishColor,
     // buttonTheme: ButtonThemeData(buttonColor: darkBluishColor),
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
@@ -32,12 +32,12 @@ class MyTheme {
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
     fontFamily: GoogleFonts.poppins().fontFamily,
-    accentColor: lightBluishColor,
+    // accentColor: lightBluishColor,
     cardColor: Colors.black,
     canvasColor: darkcreamColor,
     iconTheme: const IconThemeData(color: Colors.white),
 
-    buttonColor: lightBluishColor,
+    // buttonColor: lightBluishColor,
     // buttonTheme: ButtonThemeData(buttonColor: lightBluishColor),
 
     appBarTheme: const AppBarTheme(
